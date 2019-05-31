@@ -27,11 +27,13 @@ app.service('brandService', function ($http) {
 
     // 删除品牌
     this.delete = function (ids) {
-        return $http.get('../brand/delete.do?id=' + ids);
+        return $http.get('../brand/delete.do?ids=' + ids);
     };
 
     // 带条件分页查询品牌
     this.search = function (page, rows, searchEntity) {
         return $http.post('../brand/search.do?page=' + page + '&rows=' + rows, searchEntity);
     };
+
+
 });
